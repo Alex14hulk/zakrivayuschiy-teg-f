@@ -15,24 +15,3 @@
     font-display: swap;
     font-weight: 400, 785;
 }
-
-@supports (
-  (text-stroke: 1px var(--watermark-shadow)) or
-    (-webkit-text-stroke: 1px var(--watermark-shadow))
-) {
-  .watermark {
-    text-shadow: none;
-    -webkit-text-stroke: 1px var(--watermark-shadow);
-    text-stroke: 1px var(--watermark-shadow);
-  }
-}
-
-@supports (font-variation-settings: normal) {
-  .page {
-    font-variation-settings: "wght" var(--main_text_weight);
-  }
-
-  .article-title {
-    font-variation-settings: "wght" var(--title-weight);
-  }
-}
