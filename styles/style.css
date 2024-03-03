@@ -70,11 +70,18 @@
   border: none;
   text-transform: uppercase;
   background-color: transparent;
+}
+
+.theme-menu__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
   pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled::before {
@@ -83,8 +90,6 @@
   margin-inline-start: -19px;
 }
 
-.theme-menu__button:disabled,
-.theme-menu__button:hover,
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
@@ -97,12 +102,20 @@
 
 .theme-menu__button::after {
   content: "";
-  position: absolute;
-  inset: 0px auto 0px 5px;
   width: 88%;
-  border-bottom: 1.5px solid currentColor;
+  height: 2px;
   transform: scaleX(0);
-  transform-origin: 0 0;
+  position: absolute;
+  background-color: var(--accent-color);
+  bottom: -2px;
+  right: 0;
+  opacity: 0.6;
+  transform-origin: left;
+  transition: transform 0.3s linear;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .article {
@@ -199,6 +212,12 @@
 .card__icon {
   width: 43px;
   border: 2px solid transparent;
+}
+
+.card__icon:focus-visible {
+  outline: none;
+  border: 2px solid var(--accent-color);
+  transition: border-color 0.3s ease;
 }
 
 .like-icon {
