@@ -17,18 +17,34 @@
     animation: pointer-moves-left 0.5s ease-in-out infinite alternate;
 }
 
+.contour {
+    fill: var(--contour);
+    transition: fill 0.1s linear;
+}
+
+.main-body {
+    fill: transparent;
+    transition: fill 0.3s ease;
+}
+
+.core {
+    fill: transparent;
+    transition: fill 0.3s 0.03s ease;
+}
+
 .sparks {
+    fill: var(--heart_color);
     opacity: 0;
 }
 
 .like-icon .contour {
     fill: var(--contour);
-    transition: fill 0.3s 0.05s linear;
+    transition: fill 0.3s 0.06s linear;
 }
 
 .like-icon:hover .core {
-    fill: var(--heart_color);
-    transition: fill 0.3s 0.05s linear;
+    fill: var(--accent-color);
+    transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
@@ -53,7 +69,7 @@
 }
 
 .like-icon.is-liked .contour {
-    transition: fill 0.3s 0.06s linear;
+    transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .main-body {

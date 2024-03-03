@@ -31,7 +31,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
   width: 100%;
   margin: 0 auto;
   margin-block-start: 100px;
@@ -85,9 +85,14 @@
 
 .theme-menu__button:disabled,
 .theme-menu__button:hover,
-.theme-menu__button:focus, .theme-menu__button:focus-visible {
+.theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
+}
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -245,13 +250,8 @@ svg {
   outline: none;
 }
 
-.card__like:focus, .card_save:focus {
-  box-shadow: 2px 2px var(--accent-color);
-}
-
 .save_memory {
   margin: 0 auto;
-  padding: 49px 34.5px 100px;
 }
 
 .card_save {
@@ -261,11 +261,12 @@ svg {
   margin: 0 auto;
   padding-block: 12px;
   padding-inline: 18px;
-  gap: 7px;
+  gap: 9px;
+  margin-block-end: 100px;
 }
 
 .card_save svg {
-  width: 21px;
+  width: 28px;
 }
 
 .floppy_box {
@@ -368,16 +369,25 @@ dialog svg {
   .save_memory {
     width: var(--window_width);
   }
+  .card_save {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+  }
+  .card_save svg {
+    align-self: center;
+  }
 }
 
 @supports (
-  (text-stroke: 1px var(--watermark-shadow)) or
-    (-webkit-text-stroke: 1px var(--watermark-shadow))
+  (text-stroke: 1px var(--watermark_shadow)) or
+    (-webkit-text-stroke: 1px var(--watermark_shadow))
 ) {
   .watermark {
     text-shadow: none;
-    -webkit-text-stroke: 1px var(--watermark-shadow);
-    text-stroke: 1px var(--watermark-shadow);
+    -webkit-text-stroke: 1px var(--watermark_shadow);
+    text-stroke: 1px var(--watermark_shadow);
   }
 }
 
